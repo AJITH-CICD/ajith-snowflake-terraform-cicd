@@ -1,8 +1,13 @@
 name: Terraform CI
 
 on:
+  push:
+    branches:
+      - main
+      - develop
   pull_request:
     branches:
+      - main
       - develop
 
 permissions:
@@ -12,10 +17,6 @@ jobs:
   terraform-ci:
 
     runs-on: ubuntu-latest
-
-    defaults:
-      run:
-        working-directory: terraform
 
     steps:
 
