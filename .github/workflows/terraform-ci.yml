@@ -32,6 +32,8 @@ jobs:
 
       - name: Terraform Init
         run: terraform init -input=false
+        env:
+          TF_TOKEN_app_terraform_io: ${{ secrets.HCP_TERRAFORM_TOKEN }}
 
       - name: Terraform Validate
         run: terraform validate
@@ -39,7 +41,4 @@ jobs:
       - name: Terraform Plan
         run: terraform plan -input=false -no-color
         env:
-          TF_VAR_snowflake_organization: ${{ secrets.SNOWFLAKE_ORGANIZATION }}
-          TF_VAR_snowflake_account: ${{ secrets.SNOWFLAKE_ACCOUNT }}
-          TF_VAR_snowflake_user: ${{ secrets.SNOWFLAKE_USER }}
-          TF_VAR_snowflake_password: ${{ secrets.SNOWFLAKE_PASSWORD }}
+          TF_TOKEN_app_terraform_io: ${{ secrets.HCP_TERRAFORM_TOKEN }}
