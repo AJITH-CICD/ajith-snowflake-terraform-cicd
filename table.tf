@@ -27,7 +27,7 @@ resource "snowflake_table" "customers" {
 }
 resource "snowflake_table" "ajith_customers" {
   database = snowflake_database.AJITH_TERRAFORM_DB.name
-  schema   = snowflake_schema.sales.name
+  schema   = snowflake_schema.ajith_customer.name
   name     = "AJITH_CUSTOMERS"
 
   column {
