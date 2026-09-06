@@ -10,3 +10,9 @@ resource "snowflake_schema" "customer" {
 
   comment = "Customer schema managed by Terraform"
 }
+resource "snowflake_schema" "ajith_customer" {
+  database = snowflake_database.AJITH_TERRAFORM_DB.name
+  name     = "AJITH_CUSTOMER"
+
+  comment = "Customer schema managed by Terraform"
+}
